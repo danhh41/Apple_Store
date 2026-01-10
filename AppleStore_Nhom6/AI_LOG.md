@@ -289,3 +289,126 @@ Hiểu MANIFEST.MF
 Phân biệt .jar vs .war vs .ear
 
 Cứ hỏi tiếp, mình giải thích sâu cho bạn
+
+## Me:
+cách sài mermaid để vẽ flowchart
+
+## AI:
+Mermaid là ngôn ngữ dạng text dùng để vẽ sơ đồ (flowchart, sequence, class…) rất tiện khi viết Markdown, báo cáo kỹ thuật, README, hoặc dùng trong các editor hỗ trợ Mermaid.
+
+1️⃣ Cú pháp cơ bản để vẽ Flowchart bằng Mermaid
+Mẫu đơn giản nhất
+flowchart TD
+    A[Bắt đầu] --> B[Xử lý]
+    B --> C[Kết thúc]
+
+
+Giải thích:
+
+flowchart TD
+
+TD = Top → Down (trên xuống dưới)
+
+Khác: LR (trái → phải), RL, BT
+
+A, B, C là tên node
+
+Text trong [] là nội dung hiển thị
+
+--> là mũi tên luồng
+
+2️⃣ Các loại khối thường dùng trong flowchart
+flowchart TD
+    A([Bắt đầu])
+    B[Chữ nhật: Xử lý]
+    C{Hình thoi: Quyết định?}
+    D[/Nhập dữ liệu/]
+    E([Kết thúc])
+
+Ký hiệu	Ý nghĩa
+[ ]	Xử lý
+{ }	Quyết định (if/else)
+([ ])	Bắt đầu / Kết thúc
+/ /	Nhập / Xuất
+3️⃣ Flowchart menu chương trình (ví dụ thực tế)
+flowchart TD
+    A([Start])
+    B[Hiển thị Menu]
+    C{Người dùng chọn?}
+    D[Chức năng 1]
+    E[Chức năng 2]
+    F[Thoát]
+    G([End])
+
+    A --> B --> C
+    C -->|1| D --> B
+    C -->|2| E --> B
+    C -->|0| F --> G
+
+
+👉 Rất phù hợp cho “Flowchart sơ bộ: luồng hoạt động chính của chương trình (Menu)”
+
+4️⃣ Gắn nhãn cho mũi tên (if / else)
+flowchart LR
+    A{Đúng không?}
+    A -->|Yes| B[Tiếp tục]
+    A -->|No| C[Dừng]
+
+5️⃣ Đổi hướng sơ đồ
+flowchart LR   %% Left → Right
+flowchart TD   %% Top → Down
+
+6️⃣ Dùng Mermaid ở đâu?
+
+✔ Hỗ trợ tốt trong:
+
+Markdown (GitHub, GitLab)
+
+VS Code (extension Mermaid)
+
+Obsidian
+
+Typora
+
+Một số LMS / báo cáo kỹ thuật
+
+❗ Word không hỗ trợ trực tiếp (cần export sang hình)
+
+7️⃣ Mẹo khi vẽ flowchart cho báo cáo
+
+Đặt tên node ngắn gọn
+
+Không viết quá dài trong 1 khối
+
+Với menu → luôn có vòng quay lại menu
+
+Flowchart sơ bộ → không cần chi tiết code
+
+## Me: 
+viết cú pháp flowchart để add lên mermaid
+
+## AI:
+flowchart TD
+    A([Start])
+    B[Display Main Menu]
+    C{User selects an option}
+
+    D[Product Management]
+    E[Category Management]
+    F[Inventory Management]
+    G[Search / Filter Products]
+    H[Update Product Price]
+    I[Save / Load Data]
+    J[Exit System]
+
+    K([End])
+
+    A --> B --> C
+
+    C -->|1| D --> B
+    C -->|2| E --> B
+    C -->|3| F --> B
+    C -->|4| G --> B
+    C -->|5| H --> B
+    C -->|6| I --> B
+    C -->|0| J --> K
