@@ -1,4 +1,4 @@
-# Apple Store Management System – Feature Description
+# Apple Store – Feature Description
 
 
 ## 1. Product
