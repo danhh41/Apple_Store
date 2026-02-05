@@ -103,7 +103,7 @@ public class Mac {
     }
 
     public boolean isStockAvailable() {
-        return quantity > 0;
+        return quantity > 5;
     }
 
     public String getInfo() {
